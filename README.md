@@ -1,14 +1,5 @@
 # Fullstack Authentication Example with Next.js and NextAuth.js
 
-With Railway Integration
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fprisma%2Ffullstack-prisma-nextjs-blog&env=SECRET,GITHUB_ID,GITHUB_SECRET&project-name=fullstack-prisma-nextjs-blog&repo-name=fullstack-prisma-nextjs-blog&integration-ids=oac_eGEyJUf8jDjOQSCNJiyYRbfX)
-
-Without the Railway integration
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fprisma%2Ffullstack-prisma-nextjs-blog&env=DATABASE_URL,SECRET,GITHUB_ID,GITHUB_SECRET&project-name=fullstack-prisma-nextjs-blog&repo-name=fullstack-prisma-nextjs-blog)
-
-This is a starter that shows how to implement a **fullstack app in TypeScript with [Next.js](https://nextjs.org/)** with the following stack:
 
 - [React](https://reactjs.org/) (frontend)
 - [Next.js API routes](https://nextjs.org/docs/api-routes/introduction)
@@ -16,8 +7,7 @@ This is a starter that shows how to implement a **fullstack app in TypeScript wi
 - [NextAuth.js](https://next-auth.js.org/) for authentication. 
 - [PostgreSQL](http://postgresql.org/) as the database of choice.
 
-Before you deploy the application to Vercel, ensure you
-- (Optional) Sign in to Railway and create a PostgreSQL database
+Before you deploy the application, ensure you
 - Create a separate GitHub OAuth application before you deploy your application
 - Update the **Authorization callback URL** with the URL of the deployed app after successfully deploying the app
 
@@ -231,57 +221,6 @@ datasource db {
   url      = "postgresql://janedoe:mypassword@localhost:5432/notesapi?schema=public"
 }
 ```
-
-### MySQL
-
-For MySQL, the connection URL has the following structure:
-
-```prisma
-datasource db {
-  provider = "mysql"
-  url      = "mysql://USER:PASSWORD@HOST:PORT/DATABASE"
-}
-```
-
-Here is an example connection string with a local MySQL database:
-
-```prisma
-datasource db {
-  provider = "mysql"
-  url      = "mysql://janedoe:mypassword@localhost:3306/notesapi"
-}
-```
-
-### Microsoft SQL Server
-
-Here is an example connection string with a local Microsoft SQL Server database:
-
-```prisma
-datasource db {
-  provider = "sqlserver"
-  url      = "sqlserver://localhost:1433;initial catalog=sample;user=sa;password=mypassword;"
-}
-```
-
-### MongoDB
-
-Here is an example connection string with a local MongoDB database:
-
-```prisma
-datasource db {
-  provider = "mongodb"
-  url      = "mongodb://USERNAME:PASSWORD@HOST/DATABASE?authSource=admin&retryWrites=true&w=majority"
-}
-```
-Because MongoDB is currently in [Preview](https://www.prisma.io/docs/about/releases#preview), you need to specify the `previewFeatures` on your `generator` block:
-
-```
-generator client {
-  provider        = "prisma-client-js"
-  previewFeatures = ["mongodb"]
-}
-```
-</details>
 
 ## Next steps
 
