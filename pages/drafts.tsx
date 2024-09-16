@@ -1,12 +1,12 @@
 import React from "react";
-import type { GetStaticProps } from "next";
+import type { GetServerSideProps, GetStaticProps } from "next";
 import Layout from "../components/Layout";
 import Post, { PostProps } from "../components/Post";
 import { useSession, getSession } from "next-auth/react";
 import prisma from '../lib/prisma'
 
 
-export const getStaticProps: GetStaticProps = async ({ req, res }) => {
+export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   const session = await getSession({ req });
   if (!session) {
     res.statusCode = 403;
